@@ -11,25 +11,23 @@ This repository contains two bash scripts designed to simplify the process of la
 
 ### Launching a Browser
 
-1. Clone the repository: `git clone https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git` (Replace with your actual repo URL)
-2. Navigate to the directory: `cd YOUR_REPO_NAME`
+1. Clone the repository: `git clone https://github.com/geekz-projects/docker-browser-vnc/`
+2. Navigate to the directory: `cd docker-browser-vnc`
 3. Make the script executable: `chmod +x launch_browser.sh`
 4. Run the script: `./launch_browser.sh`
 5. Follow the on-screen prompts to select a browser.
 
 ### Stopping a Browser/Containers
 
-1. Clone the repository (if you haven't already): `git clone https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git`
-2. Navigate to the directory: `cd YOUR_REPO_NAME`
-3. Make the script executable: `chmod +x stop_browser.sh`
-4. Run the script: `./stop_browser.sh`
-5. Follow the on-screen prompts to select the container to stop (or choose 'all').
+1. Make the script executable: `chmod +x stop_browser.sh`
+3. Run the script: `./stop_browser.sh`
+4. Follow the on-screen prompts to select the container to stop (or choose 'all').
 
 ## Prerequisites
 
 * Docker: Ensure Docker is installed and running on your system.
-* SSH: You need SSH access to `nglocalhost.com` (or your chosen SSH server).  Make sure you have the correct SSH keys configured.
-* `socat` (For some Docker images): Some of the Docker images used in this project might require `socat` to be installed on your host system. If you encounter errors related to port forwarding, install `socat`.  (e.g., `sudo apt-get install socat` on Debian/Ubuntu).
+* SSH: You need SSH access to `nglocalhost.com` (or your chosen SSH server).  
+* `socat` (For some Docker images): Some of the Docker images used in this project might require `socat` to be installed on your host system. If you encounter errors related to port forwarding, install `socat`.
 
 ## Configuration
 
@@ -40,7 +38,7 @@ This repository contains two bash scripts designed to simplify the process of la
 ## Security Considerations
 
 * **VNC Password:**  As mentioned above, change the default VNC password immediately.  A weak VNC password can compromise your system.
-* **SSH Tunnel:**  Ensure your SSH server is secure and that you are using strong SSH keys.
+* **SSH Tunnel:**  Ensure your SSH server .
 * **Docker Security:** Be aware of the security implications of running Docker containers.  Only use images from trusted sources.
 
 ## Contributing
