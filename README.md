@@ -4,8 +4,8 @@ This repository contains two bash scripts designed to simplify the process of la
 
 ## Scripts
 
-* **`launch_browser.sh`**: This script provides a menu-driven interface to select and launch a Docker container for the desired browser. It then establishes an SSH tunnel, forwarding the VNC port for remote access.
-* **`stop_browser.sh`**: This script stops and removes the running Docker containers (either a specific container or all containers) and attempts to terminate the associated SSH tunnel.
+* **`start`**: This script provides a menu-driven interface to select and launch a Docker container for the desired browser. It then establishes an SSH tunnel, forwarding the VNC port for remote access.
+* **`stop`**: This script stops and removes the running Docker containers (either a specific container or all containers) and attempts to terminate the associated SSH tunnel.
 
 ## Usage
 
@@ -13,14 +13,14 @@ This repository contains two bash scripts designed to simplify the process of la
 
 1. Clone the repository: `git clone https://github.com/geekz-projects/docker-browser-vnc/`
 2. Navigate to the directory: `cd docker-browser-vnc`
-3. Make the script executable: `chmod +x launch_browser.sh`
-4. Run the script: `./launch_browser.sh`
+3. Make the script executable: `chmod +x start`
+4. Run the script: `./start`
 5. Follow the on-screen prompts to select a browser.
 
 ### Stopping a Browser/Containers
 
-1. Make the script executable: `chmod +x stop_browser.sh`
-3. Run the script: `./stop_browser.sh`
+1. Make the script executable: `chmod +x stop`
+3. Run the script: `./stop`
 4. Follow the on-screen prompts to select the container to stop (or choose 'all').
 
 ## Prerequisites
@@ -31,8 +31,8 @@ This repository contains two bash scripts designed to simplify the process of la
 
 ## Configuration
 
-* **SSH Server:**  The scripts currently use `nglocalhost.com` as the SSH server. You can change this in both `launch_browser.sh` and `stop_browser.sh` by modifying the `ssh` command.
-* **VNC Password (Debian Browser):** The Debian Browser container uses a VNC password. This is currently hardcoded as "123456" in `launch_browser.sh`.  It is **highly recommended** that you change this password to a strong and secure one.  You can do so by editing the `launch_browser.sh` script.  Ideally, store this in an environment variable.
+* **SSH Server:**  The scripts currently use `nglocalhost.com` as the SSH server. You can change this in both `start` and `stop` by modifying the `ssh` command.
+* **VNC Password (Debian Browser):** The Debian Browser container uses a VNC password. This is currently hardcoded as "123456" in `start`.  It is **highly recommended** that you change this password to a strong and secure one.  You can do so by editing the `start` script.  Ideally, store this in an environment variable.
 * **Docker Images:** The scripts use specific Docker images for each browser. You can modify these if you prefer different images.
 
 ## Security Considerations
