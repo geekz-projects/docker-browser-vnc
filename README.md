@@ -11,7 +11,7 @@ This repository contains two bash scripts designed to simplify the process of la
 
 ### Launching a Browser
 
-1. Clone the repository: `git clone https://github.com/geekz-projects/docker-browser-vnc/`
+1. Clone the repository: `git clone --depth=1 https://github.com/geekz-projects/docker-browser-vnc/`
 2. Navigate to the directory: `cd docker-browser-vnc`
 3. Make the script executable: `chmod +x start`
 4. Run the script: `./start`
