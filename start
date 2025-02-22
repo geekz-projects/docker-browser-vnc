@@ -69,48 +69,10 @@ establish_tunnel() {
   fi
 
 }
-# Function to check for updates (with version comparison)
-check_for_updates() {
-  local remote_version=$(curl -s "https://raw.githubusercontent.com/geekz-projects/docker-browser-vnc/main/version.txt")
-  local local_version=$(grep "version=" version.txt | cut -d '=' -f 2)
-
-  if [[ -z "$local_version" ]]; then
-      echo "Error: version.txt file not found or invalid format."
-      return 1
-  fi
-
-  if [[ -z "$remote_version" ]]; then
-      echo "Error: Could not retrieve remote version."
-      return 1
-  fi
-
-  # Trim whitespace from versions for accurate comparison
-  local_version=$(echo "$local_version" | tr -d '[:space:]')
-  remote_version=$(echo "$remote_version" | tr -d '[:space:]')
-
-  if [[ "$local_version" == "$remote_version" ]]; then
-    echo "You are using the latest version: $local_version"
-    return 0 # Indicate no update needed
-  fi
-
-  echo "A new version is available: $remote_version"
-  read -p "Do you want to update? (y/n): " update_choice
-  if [[ "$update_choice" == "y" ]]; then
-    echo "Updating..."
-    git pull origin main
-    if [[ $? -ne 0 ]]; then
-      echo "Update failed."
-      return 1
-    fi
-    echo "Update complete. Please restart the script."
-    return 2 # Indicate update and restart needed
-  fi
-  return 0
-}
 
 # Main script execution
 # 1. Check for updates FIRST
-check_for_updates
+
 update_status=$?
 if [[ "$update_status" -eq 1 ]]; then # Error
     exit 1
